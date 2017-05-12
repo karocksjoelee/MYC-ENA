@@ -5,6 +5,9 @@
 var app = require('../middleware');
 var debug = require('debug')('myc-ena:server');
 var http = require('http');
+const cm = require('../utility/common-module');
+const chalk = require('chalk');
+const figlet = require('figlet');
 
 
 // HTTP Server Setup .
@@ -13,7 +16,8 @@ const port = normalizePort(process.env.PORT || '7500');
 app.set('port', port);
 
 const server = http.createServer(app).listen(port, (req, res) => {
-  console.log(`[SERVER] Running at ${port}`);
+  console.log(chalk.green(figlet.textSync('MYC-ENA', { horizontalLayout:'full' })));
+  cm.logSuc(`[SERVER] Running at ${port}`);
 });
 
 server.on('error', (error) => {
