@@ -1,16 +1,14 @@
 #!/usr/bin/env node
 
-// Module Dependencies.
+// Module Dependencies .
 // ==========================================================================================
-
-var app = require('../app');
+var app = require('../middleware');
 var debug = require('debug')('myc-ena:server');
 var http = require('http');
 
 
-// HTTP Server Setup
+// HTTP Server Setup .
 // ==========================================================================================
-
 const port = normalizePort(process.env.PORT || '7500');
 app.set('port', port);
 
@@ -55,13 +53,9 @@ server.on('listening', () => {
 });
 
 
-
-
-/**
- * Normalize a port into a number, string, or false.
- */
-
+// Normalize a port into a number, string, or false.
 function normalizePort(val) {
+  
   var port = parseInt(val, 10);
 
   if (isNaN(port)) {
@@ -75,6 +69,7 @@ function normalizePort(val) {
   }
 
   return false;
+
 }
 
 
