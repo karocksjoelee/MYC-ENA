@@ -4,7 +4,7 @@ const nodemon = require('gulp-nodemon');
 const browserSync = require('browser-sync').create();
 const cm = require('./utility/common-module');
 
-gulp.task('default', ['serve','jshint', 'nodemon', 'watch-front-end','watch-back-end']);
+gulp.task('default', ['serve','jshint', 'nodemon','watch']);
 
 
 gulp.task('serve', () => {
@@ -26,14 +26,10 @@ gulp.task('jshint', () => {
 });
 
 
-gulp.task('watch-front-end', function () {
+gulp.task('watch', () => {
 
-    gulp.watch(['dist/*.html', 'dist/*.js', 'dist/*.*']).on('change', browserSync.reload);
-
-});
-
-gulp.task('watch-back-end', () => {
-
+    gulp.watch(['dist/*.html', 'dist/*.js', 'dist/*.*','src/*.*']).on('change', browserSync.reload);
+    gulp.watch(['server/**/*.js','server.js','bin/www'],['jshint']);
     gulp.watch(['routes/**/*.js', 'middleware.js', 'bin/www.js', 'gulpfile.js','dist/*.*']).on('change', () => {
         cm.logWarn('[SERVER] Back-End File Changed');
     });
