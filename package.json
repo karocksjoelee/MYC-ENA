@@ -30,6 +30,7 @@
     "figlet": "^1.2.0",
     "jade": "~1.11.0",
     "jshint": "^2.9.4",
+    "mongoose": "^4.10.2",
     "morgan": "~1.8.1",
     "rxjs": "^5.1.0",
     "serve-favicon": "~2.4.2",
