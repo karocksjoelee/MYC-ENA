@@ -7,6 +7,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const cm = require('./utility/common-module');
 const app = express();
 
 const index = require('./routes/index');
@@ -37,6 +38,8 @@ app.use('/users', users);
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
+  cm.logErr(`[ROUTES ${err.status}] URL : ${req.originalUrl} Not Found , Try Check Your Sever Routes`);
+  res.status(err.status).send(`[ROUTES ${err.status}] URL : ${req.originalUrl} Not Found`);
   next(err);
 });
 
