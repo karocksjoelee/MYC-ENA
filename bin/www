@@ -65,6 +65,7 @@ mongoose.connection.on('connected', () => {
 
 // If the connection throws an error
 mongoose.connection.on('error', (err) => {
+  
   if(err == 'MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]'){
     cm.logErr(`[MONGO-DB] Not Connected`);
   }else{

@@ -43,7 +43,6 @@
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "angular/cli": "^1.0.3",
-    "browser-sync": "^2.18.8",
     "codelyzer": "~2.0.0",
     "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.4",
