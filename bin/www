@@ -73,6 +73,25 @@ mongoose.connection.on('error', (err) => {
   
 });
 
+// Socket.io Connection
+// ==========================================================================================
+const socketio = require('socket.io')(server);
+
+socketio.on('connection' , (socket) => {
+
+  cm.logSuc('[SOCKET.IO] User Connected !');
+
+  socket.on('disconnect' , () => {
+    cm.logWarn('[SOCKET.IO] User Disconnected !');
+  });
+
+  socket.on('add-message', (message) => {
+    socketio.emit('message', { type: 'new-message', text: message });
+  });
+
+
+}); // end of socket connection 
+
 
 // Normalize a port into a number, string, or false.
 function normalizePort(val) {
@@ -92,5 +111,6 @@ function normalizePort(val) {
   return false;
 
 }
+
 
 
