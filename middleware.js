@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cm = require('./utility/common-module');
 const app = express();
+const fallback = require('express-history-api-fallback');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
@@ -33,6 +34,8 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/', index);
 app.use('/users', users);
+
+app.use(fallback(__dirname + '/dist/index.html'));
 
 // Catch 404 and forward to Error Handler
 app.use(function(req, res, next) {
