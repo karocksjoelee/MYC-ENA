@@ -6,7 +6,7 @@ This project using Mongo DB / Express / Angular-Cli / NodeJS for web application
 
 ## Index 
 
-  * [Development Enviroment Setup](#development-enviroment-setup)
+  * [Development Enviroment Setup](#development-enviroment-setup)
   * [Getting Start](#getting-start)
   * Angular Cli Development Guide Line
   * Node Express Development Line
