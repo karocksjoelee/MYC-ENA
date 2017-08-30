@@ -1,28 +1,27 @@
-# MycEna
+# MEAN-STARTER
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
+This project using Mongo DB / Express / Angular-Cli / NodeJS for web application development. 
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Index 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+  - Development Enviroment Setup
+  - Getting Start
+  - Angular Cli Development Guide Line
+  - Node Express Development Guide Line
+  - Deploying ( Production & Dockerize )
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Development Enviroment Setup
 
-## Running unit tests
+1. [Install MongoDB](https://www.mongodb.com/) - NoSql Database (This is optional , if you're sure you don't need a database)
+2. [Install Node.js](https://nodejs.org) - Server 
+3. [Install Angular-Cli](https://github.com/angular/angular-cli) - Front-end frame-work for building Single Page Application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+$ npm install -g @angular/cli
+```
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
