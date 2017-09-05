@@ -7,7 +7,7 @@ const debug = require('debug')('myc-ena:server');
 const http = require('http');
 const cm = require('../utility/common-module');
 const mongoose = require('mongoose');
-const mongodbURI = 'mongodb://localhost:27017/myc-ena';
+const mongodbURI = 'mongodb://localhost:27017/mean-starter';
 const chalk = require('chalk');
 const figlet = require('figlet');
 
