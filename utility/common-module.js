@@ -30,3 +30,36 @@ exports.errHelper = function(err,next) {
   }
 
 }
+
+exports.removeFileExt = function(fileName) {
+
+  if (!typeof fileName === 'string') {
+    this.logErr(`[CM][RemoveFileExt] Input is not a string`);
+    return;
+  }
+
+  return this.upperFL(fileName.slice(0, fileName.indexOf('.')));
+
+}
+
+exports.upperFL = function(string) {
+
+  if (!typeof fileName === 'string') {
+    this.logErr(`[CM][UpperFirstLetter] Input is not a string`);
+    return;
+  }
+
+  return this.charAt(0).toUpperCase() + string.slice(1);
+
+}
+
+exports.lowerFL = function(string) {
+
+  if (!typeof fileName === 'string') {
+    this.logErr(`[CM][LowerFirstLetter] Input is not a string`);
+    return;
+  }
+
+  return this.charAt(0).toLowerCase() + string.slice(1);
+
+}
