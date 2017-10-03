@@ -1,0 +1,1 @@
+Here defines the Mongo data base schema.
