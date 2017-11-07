@@ -31,6 +31,18 @@ exports.errHelper = function(err,next) {
 
 }
 
+
+exports.apiErrHelper = function(err, next) {
+
+  this.logErr(`[RESTful-API] Operation Error:`);
+  console.log(err);
+  this.logErr(`------------------------------------------------------------------------------------`);
+  if (next) {
+    next();
+  }
+
+}
+
 exports.removeFileExt = function(fileName) {
 
   if (!typeof fileName === 'string') {
