@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RealTimeService } from './realtime.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,17 @@ import { RealTimeService } from './realtime.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
-  title = 'Angular App Works !';
   messages = [];
   connection;
   message;
 
-  constructor(private realTimeService: RealTimeService) { }
+  constructor(private realTimeService: RealTimeService, public translate: TranslateService) {
+
+    translate.setDefaultLang('zhtw');
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|zhtw/) ? browserLang : 'zhtw');
+
+   }
 
   ngOnInit() {
 
@@ -24,8 +30,16 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   sendMessage() {
+
     this.realTimeService.sendMessage(this.message);
     this.message = '';
+
+  }
+
+  onChangeLang(event) {
+
+    this.translate.use(event.target.value);
+
   }
 
   ngOnDestroy() {

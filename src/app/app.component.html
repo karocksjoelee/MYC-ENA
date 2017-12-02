@@ -1,9 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+
+<h1>{{'test.title' | translate }}</h1>
+
+<select (change)="onChangeLang($event)">
+  <option value="zhtw">繁體中文</option>
+  <option value="en">English</option>
+</select>
 
 <h2>RealTime Date Demo</h2>
+
 <div *ngFor="let message of messages">
   {{message.text}}
 </div>
+
 <input [(ngModel)]="message" /><button (click)="sendMessage()">Send</button>
